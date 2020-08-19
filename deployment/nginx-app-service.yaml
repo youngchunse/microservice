@@ -8,8 +8,7 @@ spec:
   # automatically create an external load-balanced IP for the service.
   type: LoadBalancer
   ports:
-  - port: 80
-    targetPort: 8080
+  - port: 8080
     protocol: TCP
   selector:
     app: nginx-app

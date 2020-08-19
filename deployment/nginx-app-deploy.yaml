@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginxapp
   labels:
-    app: nginx-app
+    app.kubernetes.io/name: nginx-app
+  name: nginxapp
 spec:
+  replicas: 2
   selector:
     matchLabels:
-      app: nginx-app
-  replicas: 4
+      app.kubernetes.io/name: nginx-app
   template:
     metadata:
       labels:
-        app: nginx-app
+        app.kubernetes.io/name: nginx-app
     spec:
       containers:
-      - name: app
-        image: youngwoochun/custom-docker-images:nginx-app
+      - image: youngwoochun/custom-docker-images:nginx-app
+        name: app
         ports:
         - containerPort: 8080
