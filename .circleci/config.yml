@@ -39,7 +39,7 @@ jobs:
           command: |
             kubectl get deployments --all-namespaces
             kubectl get svc --all-namespaces
-            kuebctl describe svc nginxapp
+            kubectl describe svc nginxapp
   undeploy-application:
     executor: aws-eks/python3
     parameters:
