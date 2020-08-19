@@ -40,6 +40,10 @@ jobs:
             kubectl get deployments --all-namespaces
             kubectl get svc --all-namespaces
             kubectl describe svc nginxapp
+      - run:
+          name: checking svc, deploy
+          command: |
+            kubectl get svc --all-namespaces
   undeploy-application:
     executor: aws-eks/python3
     parameters:
