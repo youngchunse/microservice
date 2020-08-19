@@ -35,12 +35,11 @@ jobs:
       - kubernetes/create-or-update-resource:
           resource-file-path: "deployment/nginx-app-service.yaml"
       - run:
-          name: checking nodes, pods, svc, deploy
+          name: checking svc, deploy
           command: |
-            kubectl get nodes
-            kubectl get pods -o wide
-            kubectl get svc --all-namespaces
             kubectl get deployments --all-namespaces
+            kubectl get svc --all-namespaces
+            kuebctl describe svc nginxapp
   undeploy-application:
     executor: aws-eks/python3
     parameters:
