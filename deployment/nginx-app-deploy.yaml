@@ -18,4 +18,4 @@ spec:
       - name: app
         image: youngwoochun/custom-docker-images:nginx-app
         ports:
-        - containerPort: 80
+        - containerPort: 8080
