@@ -82,4 +82,4 @@ workflows:
           cluster-name: nginx_app
           aws-region: us-east-1
           requires:
-            - undeploy-application
+            - hold-undeploy
