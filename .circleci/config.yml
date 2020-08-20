@@ -111,21 +111,21 @@ jobs:
       - run:
           name: terraform plan
           command: |
-            terraform plan -input=false -var-file=terraform.tfvars
+            terraform plan -input=false -var-file=route53/terraform.tfvars
   apply:
     <<: *default_config
     steps:
       - *restore_repo
       - run:
           command: |
-            terraform apply --auto-approve -var-file=terraform.tfvars
+            terraform apply --auto-approve -var-file=route53/terraform.tfvars
   destroy:
     <<: *default_config
     steps:
       - *restore_repo
       - run:
           command: |
-            terraform destroy --auto-approve -var-file=terraform.tfvars
+            terraform destroy --auto-approve -var-file=route53/terraform.tfvars
 
 
 workflows:
