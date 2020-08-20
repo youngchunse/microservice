@@ -12,5 +12,5 @@ terraform {
 }
 
 module "route" {
-  source = "./route53"
+  source = "./"
 }
