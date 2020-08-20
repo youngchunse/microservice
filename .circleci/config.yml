@@ -122,6 +122,15 @@ jobs:
           command: |
             cd app
             terraform apply --auto-approve -var-file=terraform.tfvars
+  destroy:
+    <<: *default_config
+    steps:
+      - *restore_repo
+      - run:
+          command: |
+            cd app
+            terraform destroy --auto-approve -var-file=terraform.tfvars
+
 
 workflows:
   version: 2

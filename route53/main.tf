@@ -9,8 +9,8 @@ module "route53" {
   source = "./"
 }
 
-resource "aws_route53_zone" "main" {
-  name = var.domain.name
+data "aws_route53_zone" "primary" {
+  name         = var.domain_name
 }
 
 resource "aws_route53_record" "www" {
