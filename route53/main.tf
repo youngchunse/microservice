@@ -1,10 +1,3 @@
-provider "aws" {
-  region = "us-east-1"
-}
-module "route53" {
-  source = "./"
-}
-
 data "aws_elb" "elb" {
   name = var.lb_name
 }
