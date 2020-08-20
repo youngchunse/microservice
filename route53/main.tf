@@ -1,6 +1,3 @@
-data "aws_elb" "elb" {
-  name = var.lb_name
-}
 provider "aws" {
   region = "us-east-1"
 }
