@@ -8,7 +8,7 @@ spec:
   # automatically create an external load-balanced IP for the service.
   type: LoadBalancer
   ports:
-  - port: 80
+  - port: 8080
     targetPort: 80
     protocol: TCP
   selector:
