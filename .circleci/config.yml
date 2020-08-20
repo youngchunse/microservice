@@ -111,7 +111,6 @@ jobs:
       - run:
           name: terraform plan
           command: |
-            cd route53
             terraform plan -input=false -var-file=terraform.tfvars
   apply:
     <<: *default_config
