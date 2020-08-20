@@ -29,7 +29,6 @@ terraform_init: &terraform_init
   run:
     name: terraform init
     command: |
-      cd route53
       terraform init
 
 orbs:
@@ -120,7 +119,6 @@ jobs:
       - *restore_repo
       - run:
           command: |
-            cd route53
             terraform apply --auto-approve -var-file=terraform.tfvars
   destroy:
     <<: *default_config
@@ -128,7 +126,6 @@ jobs:
       - *restore_repo
       - run:
           command: |
-            cd route53
             terraform destroy --auto-approve -var-file=terraform.tfvars
 
 
