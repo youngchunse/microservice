@@ -78,14 +78,14 @@ workflows:
   kubernetes_deploy:
     jobs:
       - k8s-deployment:
-          cluster-name: nginx_app
+          cluster-name: flask_app
           aws-region: us-east-1
       - hold-undeploy:
           type: approval
           requires:
             - k8s-deployment
       - undeploy-application:
-          cluster-name: nginx_app
+          cluster-name: flask_app
           aws-region: us-east-1
           requires:
             - hold-undeploy
