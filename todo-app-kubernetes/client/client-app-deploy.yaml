@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo-client-app-deploy
+  namespace: test-1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: todo-client-app
+  template:
+    metadata:
+      labels:
+        app: todo-client-app
+    spec:
+      containers:
+      - image: youngwoochun/custom-docker-images:todo-client-kubernetes-app
+        name: container1
+        imagePullPolicy: IfNotPresent
